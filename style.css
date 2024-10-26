@@ -6,8 +6,9 @@ h1 {
     color: white;
 }
 
-.ball, .ball2 {
+.ball, .ball2, .ball3 {
     margin-inline: auto;
+    margin-block-start: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,5 +26,9 @@ h1 {
 
 .ball2{
     background-color: red;
+}
+
+.ball3{
+    background-color: blanchedalmond;
 }
 
