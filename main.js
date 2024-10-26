@@ -3,6 +3,20 @@
 const elBall = document.querySelector(".ball")
 const elBall2 = document.querySelector(".ball2")
 
+function onInit() { 
+    document.body.style.backgroundColor = "black"
+
+    elBall.style.backgroundColor = 'blue'
+    elBall2.style.backgroundColor = 'red'
+
+    elBall.style.width = 100 + 'px'
+    elBall.style.height = 100 + 'px'
+    elBall2.style.width = 100 + 'px'
+    elBall2.style.height = 100 + 'px'
+
+    elBall.innerText = 100
+    elBall2.innerText = 100
+}
 
 function onBallClick(elBall, maxDiameter) {
     var ballSize = +elBall.innerText
