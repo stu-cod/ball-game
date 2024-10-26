@@ -2,8 +2,7 @@
 
 var ballSize = 100
 
-function onBallClick() {
-    const elBall = document.querySelector(".ball")
+function onBallClick(elBall) {
     const randIncNum = getRandomInt(20, 60) 
     const randColor = getRandomColor()
 

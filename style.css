@@ -22,3 +22,7 @@ h1 {
     font-weight: bold;
     transition: 1s;
 }
+
+.second {
+    background-color: red;
+}
