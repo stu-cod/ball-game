@@ -1,8 +1,10 @@
 'use strict'
 
-var ballSize = 100
 
-function onBallClick(elBall,maxDiameter) {
+
+function onBallClick(elBall, maxDiameter) {
+    var ballSize = +elBall.innerText
+    console.log('elBall.innerText:', elBall.innerText)
     const randIncNum = getRandomInt(20, 60) 
     const randColor = getRandomColor()
 
@@ -12,5 +14,6 @@ function onBallClick(elBall,maxDiameter) {
     if(ballSize > maxDiameter) ballSize = 100
     elBall.style.width = `${ballSize}px`
     elBall.style.height = `${ballSize}px`
+    console.log('ballSize:', ballSize)
     elBall.innerText = ballSize
 }
