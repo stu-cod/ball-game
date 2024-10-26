@@ -30,14 +30,32 @@ function onBall3Click() {
     const ball2Color = ball2ComputedStyle.backgroundColor
     const ball2Width = ball2ComputedStyle.width
     const ball2Hieght = ball2ComputedStyle.height
-    
+
     elBall.style.backgroundColor = ball2Color
     elBall.style.width = ball2Width
     elBall.style.height = ball2Hieght
-    elBall.innerText =  parseInt(ball2Width)
+    elBall.innerText = parseInt(ball2Width)
 
     elBall2.style.backgroundColor = ballColor
     elBall2.style.width = ballWidth
     elBall2.style.height = ballHieght
-    elBall2.innerText =  parseInt(ballWidth)
+    elBall2.innerText = parseInt(ballWidth)
+}
+
+function onBall4Click() {
+    var ballSize = +elBall.innerText
+    var ball2Size = +elBall2.innerText
+    const randReduceNum = getRandomInt(20, 60)
+
+    ballSize -= randReduceNum
+    ball2Size -= randReduceNum
+
+    if (ballSize < 100) ballSize = 100
+    if (ball2Size < 100) ball2Size = 100
+    elBall.style.width = `${ballSize}px`
+    elBall.style.height = `${ballSize}px`
+    elBall.innerText = ballSize
+    elBall2.style.width = `${ball2Size}px`
+    elBall2.style.height = `${ball2Size}px`
+    elBall2.innerText = ball2Size
 }
