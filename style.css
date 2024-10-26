@@ -6,7 +6,7 @@ h1 {
     color: white;
 }
 
-.ball, .ball2, .ball3 {
+body > *:not(h1,script){
     margin-inline: auto;
     margin-block-start: 10px;
     display: flex;
@@ -30,5 +30,10 @@ h1 {
 
 .ball3{
     background-color: blanchedalmond;
+}
+
+.ball4{
+    background-color: rgb(18, 183, 84);
+
 }
 
