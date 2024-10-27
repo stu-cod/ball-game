@@ -2,6 +2,13 @@
 
 const elBall = document.querySelector(".ball")
 const elBall2 = document.querySelector(".ball2")
+const elBall3 = document.querySelector(".ball3")
+const elBall4 = document.querySelector(".ball4")
+const elBall6 = document.querySelector(".ball6")
+
+var StartClicks
+var hoverTimeout
+
 
 function onInit() {
     document.body.style.backgroundColor = "black"
@@ -20,7 +27,7 @@ function onInit() {
 
 function onBallClick(elBall, maxDiameter) {
     var ballSize = parseInt(elBall.style.width)
-    console.log('ballSize:', ballSize)
+
 
     const randIncNum = getRandomInt(20, 60)
     const randColor = getRandomColor()
@@ -70,6 +77,7 @@ function onBall4Click() {
     elBall2.style.width = ball2Size + 'px'
     elBall2.style.height = ball2Size + 'px'
     elBall2.innerText = ball2Size
+
 }
 
 function onBall5Click() {
@@ -80,4 +88,32 @@ function onBall5Click() {
 function onBall6Click() {
     onInit()
 }
+
+function startIntervalClicks() {
+    StartClicks = setInterval(() => {
+        var intervalCounter = 0
+
+        elBall.click()
+        elBall2.click()
+        elBall3.click()
+        elBall4.click()
+
+        intervalCounter++
+        if (intervalCounter >= 10) stopIntervalClicks()
+    }, 2000)
+
+}
+
+function stopIntervalClicks() {
+    clearInterval(StartClicks)
+    clearTimeout(hoverTimeout)
+}
+
+elBall6.addEventListener('mouseover', () => {
+    hoverTimeout = setTimeout(startIntervalClicks, 2000)
+}
+)
+
+elBall6.addEventListener('mouseout', stopIntervalClicks)
+
 
