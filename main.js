@@ -3,7 +3,7 @@
 const elBall = document.querySelector(".ball")
 const elBall2 = document.querySelector(".ball2")
 
-function onInit() { 
+function onInit() {
     document.body.style.backgroundColor = "black"
 
     elBall.style.backgroundColor = 'blue'
@@ -71,3 +71,13 @@ function onBall4Click() {
     elBall2.style.height = ball2Size + 'px'
     elBall2.innerText = ball2Size
 }
+
+function onBall5Click() {
+    const randColor = getRandomColor()
+    document.body.style.backgroundColor = randColor
+}
+
+function onBall6Click() {
+    onInit()
+}
+
