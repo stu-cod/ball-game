@@ -19,7 +19,8 @@ function onInit() {
 }
 
 function onBallClick(elBall, maxDiameter) {
-    var ballSize = +elBall.innerText
+    var ballSize = parseInt(elBall.style.width)
+    console.log('ballSize:', ballSize)
 
     const randIncNum = getRandomInt(20, 60)
     const randColor = getRandomColor()
@@ -28,22 +29,19 @@ function onBallClick(elBall, maxDiameter) {
     ballSize += randIncNum
 
     if (ballSize > maxDiameter) ballSize = 100
-    elBall.style.width = `${ballSize}px`
-    elBall.style.height = `${ballSize}px`
+    elBall.style.width = ballSize + 'px'
+    elBall.style.height = ballSize + 'px'
     elBall.innerText = ballSize
 }
 
 function onBall3Click() {
-    const ballComputedStyle = window.getComputedStyle(elBall)
-    const ball2ComputedStyle = window.getComputedStyle(elBall2)
+    const ballColor = elBall.style.backgroundColor
+    const ballWidth = elBall.style.width
+    const ballHieght = elBall.style.height
 
-    const ballColor = ballComputedStyle.backgroundColor
-    const ballWidth = ballComputedStyle.width
-    const ballHieght = ballComputedStyle.height
-
-    const ball2Color = ball2ComputedStyle.backgroundColor
-    const ball2Width = ball2ComputedStyle.width
-    const ball2Hieght = ball2ComputedStyle.height
+    const ball2Color = elBall2.style.backgroundColor
+    const ball2Width = elBall2.style.width
+    const ball2Hieght = elBall2.style.height
 
     elBall.style.backgroundColor = ball2Color
     elBall.style.width = ball2Width
@@ -57,8 +55,8 @@ function onBall3Click() {
 }
 
 function onBall4Click() {
-    var ballSize = +elBall.innerText
-    var ball2Size = +elBall2.innerText
+    var ballSize = parseInt(elBall.style.width)
+    var ball2Size = parseInt(elBall2.style.width)
     const randReduceNum = getRandomInt(20, 60)
 
     ballSize -= randReduceNum
@@ -66,10 +64,10 @@ function onBall4Click() {
 
     if (ballSize < 100) ballSize = 100
     if (ball2Size < 100) ball2Size = 100
-    elBall.style.width = `${ballSize}px`
-    elBall.style.height = `${ballSize}px`
+    elBall.style.width = ballSize + 'px'
+    elBall.style.height = ballSize + 'px'
     elBall.innerText = ballSize
-    elBall2.style.width = `${ball2Size}px`
-    elBall2.style.height = `${ball2Size}px`
+    elBall2.style.width = ball2Size + 'px'
+    elBall2.style.height = ball2Size + 'px'
     elBall2.innerText = ball2Size
 }
